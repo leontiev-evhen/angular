@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html >
+    <head>
+		<title>AngularJS #1</title>
+        <script src="./lib/angular/angular.min.js"></script>  
+		<script src="main.js"></script> 
+    </head>
+    <body>
+		<div ng-app="app">
+			<div ng-controller="FirstController as fcontrol">
+				<h1>{{fcontrol.lesson}}</h1>
+				<input type="text" ng-model="newItem">
+				<button ng-click="fcontrol.addItem(newItem)">Add</button>
+				<ul>
+					<li ng-repeat="item in fcontrol.data track by $index">{{item}}</li>
+				</ul>
+			</div>	
+			<div ng-controller="SecondController as scontrol">
+				<div>
+					<input type="text" ng-model="month">
+				</div>
+				<div>
+					<ul>
+						<li ng-repeat="(key, item) in scontrol.months | filter: month | orderBy">{{item}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
