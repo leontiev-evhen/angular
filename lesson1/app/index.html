@@ -7,23 +7,12 @@
     </head>
     <body>
 		<div ng-app="app">
-			<div ng-controller="FirstController as fcontrol">
-				<h1>{{fcontrol.lesson}}</h1>
-				<input type="text" ng-model="newItem">
-				<button ng-click="fcontrol.addItem(newItem)">Add</button>
-				<ul>
-					<li ng-repeat="item in fcontrol.data track by $index">{{item}}</li>
-				</ul>
-			</div>	
-			<div ng-controller="SecondController as scontrol">
-				<div>
-					<input type="text" ng-model="month">
-				</div>
-				<div>
-					<ul>
-						<li ng-repeat="(key, item) in scontrol.months | filter: month | orderBy">{{item}}</li>
-					</ul>
-				</div>
+			<div>
+				<my-dialog new-name="Max"></my-dialog>
+				<my-dialog-controller new-name="Max" ></my-dialog-controller>
+				<my-input></my-input>
+				
+				<list></list>
 			</div>
 		</div>
 	</body>
