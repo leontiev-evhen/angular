@@ -1,3 +1,4 @@
+(function() {
 angular.module('app')
 .service('ProductService', function($http) {
 	var service = {
@@ -20,3 +21,4 @@ angular.module('app')
   
 	return service;
 })
+})();
