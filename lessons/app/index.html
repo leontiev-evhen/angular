@@ -4,12 +4,10 @@
 		<title>AngularJS #4</title>
         <script src="./lib/angular/angular.min.js"></script> 
 		<script src="app.js"></script> 
-
-		<script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-		<div class="container">
+		<div class="container" ng-controller="MainCtrl">
 			<div class="col-md-12">
 				<style>
 					.ng-invalid: {
@@ -18,14 +16,19 @@
 					.ng-valid: {
 						color: green;
 					}
+
+					.error {
+						color: red;
+					}
+
 				</style>
 				<form name="userInfo">
 					<p>Name
 					<input type="text" ng-model="info.name" name="name" username required></p>
+					<p class="error" ng-hide="error">Name is not valid</p>
 					<p>Email
 					<input type="email" ng-model="info.email" name="email" required></p>
 				</form>
-				<div>{{userInfo}}</div>
 			</div>
 		</div>
 	</body>
