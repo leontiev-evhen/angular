@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html ng-app="app">
     <head>
-		<title>AngularJS #3</title>
+		<title>AngularJS #4</title>
         <script src="./lib/angular/angular.min.js"></script> 
-		<script src="./components/main.js"></script> 
-		<script src="./components/config.js"></script> 
-		<script src="./services/products.js"></script>
-		<script src="./components/home.js"></script> 
-		<script src="./components/products.js"></script> 
-		<script src="./components/product.js"></script> 
-		
-		
+		<script src="app.js"></script> 
+
 		<script src="./lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
-		<nav class="navbar navbar-default">
-		  <div class="container-fluid">
-			<div class="navbar-header">
-			  <a class="navbar-brand" href="#">Angular</a>
+		<div class="container">
+			<div class="col-md-12">
+				<style>
+					.ng-invalid: {
+						color: red;
+					}
+					.ng-valid: {
+						color: green;
+					}
+				</style>
+				<form name="userInfo">
+					<p>Name
+					<input type="text" ng-model="info.name" name="name" username required></p>
+					<p>Email
+					<input type="email" ng-model="info.email" name="email" required></p>
+				</form>
+				<div>{{userInfo}}</div>
 			</div>
-			<ul class="nav navbar-nav">
-			  	<li><a ui-sref="home" ui-sref-active="active">Home</a></li>
-				<li><a ui-sref="products" ui-sref-active="active">Products</a></li>
-			</ul>
-		  </div>
-		</nav>
-		<div class="col-md-12">
-			<ui-view></ui-view>
 		</div>
 	</body>
 </html>
